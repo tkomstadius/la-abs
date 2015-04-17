@@ -1,0 +1,5 @@
+# ignore compile related files
+*/bin
+*/obj
+*/.depend
+*/.layout
