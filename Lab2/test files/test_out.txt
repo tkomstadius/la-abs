@@ -1,0 +1,275 @@
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 1
+Enter value to be inserted: 1
+Enter key for the value to be inserted: het
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 1
+Enter value to be inserted: 1
+Enter key for the value to be inserted: the
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 1
+Enter value to be inserted: 1
+Enter key for the value to be inserted: info
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 4
+-------------------------------
+     0: key = "the"    value = 1  (6)
+     1: key = "info"   value = 1  (1)
+     2: null
+     3: null
+     4: null
+     5: null
+     6: key = "het"    value = 1  (6)
+
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 1
+Enter value to be inserted: 1
+Enter key for the value to be inserted: fusk
+Rehashing ...
+New size = 17
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 4
+-------------------------------
+     0: key = "het"    value = 1  (15)
+     1: null
+     2: null
+     3: key = "info"   value = 1  (3)
+     4: null
+     5: null
+     6: null
+     7: null
+     8: null
+     9: null
+    10: null
+    11: null
+    12: null
+    13: null
+    14: null
+    15: key = "the"    value = 1  (15)
+    16: key = "fusk"   value = 1  (16)
+
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 1
+Enter value to be inserted: 1
+Enter key for the value to be inserted: eth
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 4
+-------------------------------
+     0: key = "het"    value = 1  (15)
+     1: key = "eth"    value = 1  (15)
+     2: null
+     3: key = "info"   value = 1  (3)
+     4: null
+     5: null
+     6: null
+     7: null
+     8: null
+     9: null
+    10: null
+    11: null
+    12: null
+    13: null
+    14: null
+    15: key = "the"    value = 1  (15)
+    16: key = "fusk"   value = 1  (16)
+
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 4
+-------------------------------
+     0: key = "het"    value = 1  (15)
+     1: key = ""       value = -1  (0)
+     2: null
+     3: key = "info"   value = 1  (3)
+     4: null
+     5: null
+     6: null
+     7: null
+     8: null
+     9: null
+    10: null
+    11: null
+    12: null
+    13: null
+    14: null
+    15: key = "the"    value = 1  (15)
+    16: key = "fusk"   value = 1  (16)
+
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 1
+Enter value to be inserted: 1
+Enter key for the value to be inserted: eth
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 4
+-------------------------------
+     0: key = "het"    value = 1  (15)
+     1: key = "eth"    value = 1  (15)
+     2: null
+     3: key = "info"   value = 1  (3)
+     4: null
+     5: null
+     6: null
+     7: null
+     8: null
+     9: null
+    10: null
+    11: null
+    12: null
+    13: null
+    14: null
+    15: key = "the"    value = 1  (15)
+    16: key = "fusk"   value = 1  (16)
+
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 2
+Enter key of the value to be searched: TND004
+No element found at key TND004
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 2
+Enter key of the value to be searched: fusk
+value at key fusk: 1
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 2
+Enter key of the value to be searched: eth
+value at key eth: 1
+
+-------------------------
+Operations on Hash Table
+-------------------------
+1. Insert
+2. Search
+3. Delete
+4. Dump table
+5. Exit
+Enter your choice: 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

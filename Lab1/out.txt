@@ -1,0 +1,73 @@
+TEST PHASE 0: default and conversion constructor
+
+S3 = Set is empty!
+
+S4 = { -4 }
+
+
+TEST PHASE 1: constructor from an array
+
+S1 = { 1 3 5 }
+
+S2 = { 2 3 4 }
+
+
+TEST PHASE 2: copy constructor
+
+S5 = { 1 3 5 }
+
+
+TEST PHASE 3: operator=
+
+S3 = { 1 3 5 }
+
+S4 = { 1 3 5 }
+
+
+TEST PHASE 4: is_member
+
+S3.is_member(1) ? T
+S3.is_member(2) ? F
+S3.is_member(3) ? T
+S3.is_member(4) ? F
+S3.is_member(5) ? T
+
+S3.is_member(99999) ? F
+
+TEST PHASE 5: cardinality
+
+S3.cardinality() = 3
+
+TEST PHASE 5: union, intersection, and difference
+
+S3 = { 1 2 3 4 5 }
+
+S4 = { 3 }
+
+S5 = { 1 5 }
+
+
+TEST PHASE 6: equality, subset, strict subset
+
+S2 == S3 ? F
+S2 <= S3 ? T
+S2 <  S3 ? T
+
+TEST PHASE 7: insertion and deletion
+
+S4 = { 1 3 4 }
+
+S5 = { 1 3 4 }
+
+
+TEST PHASE 8: equality, subset, strict subset
+
+S4 == S5 ? T
+S4 <= S5 ? T
+S4 <  S5 ? F
+
+TEST PHASE 9: Create a set of strings
+
+Enter some text (end with stop)
+Data Structures and Algorithms in C++ stop
+The words sorted alphabetically: { algorithms and c++ data in structures }

@@ -1,0 +1,70 @@
+BEIJING This is a nation that builds dams, high-speed rail lines and skyscrapers with abandon. In newly muscular China, 
+sheer force is not just an art, but a bedrock principle of its seemingly unstoppable rise to global prominence.
+Now China has tightened its grip on the much more variegated world of online information, effectively forcing Google Inc., 
+the world's premier information provider, to choose between submitting to Chinese censorship and leaving 
+the world's largest community of Internet users to its rivals. It chose to leave.
+Google's decision may not cause major problems for China right away, experts said. 
+But in the longer run, they said, China's intransigent stance on filtering the flow of information 
+within its borders has the potential to weaken its links to the global economy.
+It may also sully its image promoted to its own people as well as to the international community 
+as an authoritarian country that is economically on the move, perhaps even more so than the sclerotic, democratic West.
+"The Chinese are very serious about pushing their soft-power agenda," Bill Bishop, a Beijing Internet entrepreneur and author of 
+the technology blog Digicha, said Tuesday. "Google just put a big hole in that sales pitch, and I think they know that."
+China's leaders appear fully aware of their dilemma. But at this stage in China's history, and given the Communist Party's
+ determination to maintain absolute rule, they still put political control ahead of all other concerns.
+"What does Google's exit say? What it says publicly is what everyone deeply engaged in China knows privately," Kenneth G. Lieberthal, 
+a Brookings Institution scholar and former Clinton administration adviser on China, said in an interview.
+"This is a system with very substantial domestic imperfections," Mr. Lieberthal said. 
+
+"And the view from afar that this is simply an unstoppable juggernaut that they have found the keys to the magic kingdom is not correct. China's leaders understand this as well as anyone."
+The conclusion of Google's four-year Internet experiment in China an effort to transplant
+ Western free-speech norms here was anything but smooth. On Monday, it effectively shut down the search engine 
+ it hosted inside China, after declaring in January that it would stop cooperating with Chinese censors.
+As Google began redirecting tens of millions of mainland Chinese users early Tuesday, Beijing time, to its 
+Hong Kong-based Web site, google.com.hk, parts of the company's remaining mainland operations quickly came 
+under pressure from Google's Chinese partners and from the government itself.
+
+China's biggest cellular communications company, China Mobile, was widely expected to cancel a deal that had 
+placed Google's search engine on its mobile Internet home page, used by millions of people daily. 
+One official in China's media industry said that the company was scrapping the deal under government pressure even though 
+it had no replacement lined up.
+Censorship, of course, is not new in China. The government has never released 
+its grip on the information industry, and if anything has steadily tightened supervision of the Chinese Web in the past couple of years. Those restrictions have not noticeably inhibited its economic growth, which remained robust even as the West staggered through its worst recession in decades.
+But China also does not acknowledge to its own people that it censors the Internet to exclude 
+a wide range of political and social topics that its leaders believe could lead to instability. 
+It does not release information on the number of censors it employs or the technology it uses 
+for the world's most sophisticated Internet firewall. Its 350 million Internet users, many with fast broadband connections, 
+are assured they have the same effectively limitless access to information and communications that the rest of the world enjoys.
+Google publicly challenged that stance in January, and reinforced its ideological opposition to China's policies 
+by finally pulling the plug on its mainland search engine after a failed round of talks with Chinese officials. 
+
+That forced Chinese leaders to defend their control of the Web, which they did partly with an outburst of nationalism and vitriol.
+The cost, at least with some influential sectors of its own society, could be steep. 
+In the technology sector, Google is viewed as an innovator that has spurred rapid development of the Chinese Web. 
+Its departure will leave some Chinese companies with greater influence, but could also stifle competition, some fear.
+"Google is good at innovation, and when it leaves, the rest of the companies in China will lack motivation. 
+Without its countervailing power, the industry won't be as healthy," said Zhang Yunquan, 
+a professor at the Institute of Software at the Chinese Academy of Sciences.
+Fang Xingdong, chief executive of Chinalabs.com, said the vast majority of Chinese Internet companies invested little in research and 
+"simply copy each other's technology." With Google's departure, their profits may rise, 
+but China's Web space will begin to stagnate, he predicted.
+Despite China's mantra that the Google issue should not be "politicized," it is, at the end of the day, highly politicized, 
+especially inside China.
+
+Xiao Qiang, founder and editor in chief of China Digital Times, said that China's leaders once saw the 
+Internet as having both political and commercial uses that balanced each other to a degree. 
+"But increasingly they see it as a political space," he said.
+The implication of that thinking, post-Google, is that companies that want to be major players on the Chinese Web 
+will have to prove their political fealty to the leadership, much as traditional media companies do. 
+"Chinese companies have to be collaborators," Mr. Xiao said.
+One Western official in China said that the leadership is now treating the Internet as a "core interest," 
+an issue of sovereignty on which Beijing will brook no intervention. The most commonly cited core interests are Taiwan and Tibet, 
+the third-rail issues in China's international diplomacy.
+That could make it even harder for China to negotiate Internet freedom issues with the United States and other nations. 
+In fact, even among those who argue that China will do just fine without Google, 
+China's battle with the Internet giant is seen as a proxy for its broader confrontation with the West over rights, trade, 
+climate change, and declining American hegemony.
+
+"I believe Google got some support from the U.S. government," said Yan Xuetong, director 
+of the Institute of International Studies at Tsinghua University. 
+"This means the American government will adopt a tougher, more aggressive policy toward China."

@@ -1,0 +1,62 @@
+Number of words in the file = 69
+Number unique  words in the file = 56
+
+Frequency table ...
+
+key = chief                    value = 1
+key = remain                   value = 1
+key = around                   value = 1
+key = biggest                  value = 2
+key = could                    value = 1
+key = eroded                   value = 1
+key = year                     value = 1
+key = more                     value = 1
+key = a                        value = 1
+key = decade                   value = 1
+key = long                     value = 1
+key = borrower                 value = 1
+key = government               value = 1
+key = grew                     value = 1
+key = lies                     value = 1
+key = mr                       value = 1
+key = lawrence                 value = 1
+key = world's                  value = 2
+key = economic                 value = 1
+key = world                    value = 1
+key = past                     value = 1
+key = influence                value = 1
+key = rapidly                  value = 1
+key = states                   value = 1
+key = as                       value = 2
+key = or                       value = 1
+key = income                   value = 1
+key = has                      value = 1
+key = how                      value = 1
+key = disease                  value = 1
+key = possibility              value = 1
+key = debt                     value = 1
+key = the                      value = 7
+key = afflicted                value = 1
+key = united                   value = 1
+key = power                    value = 1
+key = obama's                  value = 1
+key = japan                    value = 1
+key = ask                      value = 1
+key = summers                  value = 1
+key = suffer                   value = 1
+key = over                     value = 1
+key = used                     value = 1
+key = to                       value = 2
+key = entered                  value = 1
+key = ago                      value = 1
+key = can                      value = 1
+key = than                     value = 1
+key = that                     value = 4
+key = begin                    value = 1
+key = he                       value = 1
+key = same                     value = 1
+key = country's                value = 1
+key = before                   value = 1
+key = beyond                   value = 1
+key = adviser                  value = 1
+
