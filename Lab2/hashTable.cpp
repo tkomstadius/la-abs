@@ -68,25 +68,15 @@ double HashTable::loadFactor() const
 // IMPLEMENT
 int HashTable::find(string key) const
 {
-    int index = h(key, size);
-
-    while(index < size)
+    int found = getIndex(key);
+    if(found == NOT_FOUND)
     {
-        if(!hTable[index])
-        {
-            return NOT_FOUND;
-        }
-        else if(hTable[index]->key == key)
-        {
-            return hTable[index]->value;
-        }
-        index++;
-        if(index == size)
-        {
-            index = 0;
-        }
+        return NOT_FOUND;
     }
-    return NOT_FOUND;
+    else
+    {
+        return hTable[found]->value;
+    }
 }
 
 
@@ -191,6 +181,19 @@ void HashTable::display(ostream& os)
 // IMPLEMENT
 ostream& operator<<(ostream& os, const HashTable& T)
 {
+    if(!T.hTable)
+    {
+        return os;
+    }
+
+    for(int i = 0; i < T.size; i++)
+    {
+        if(T.hTable[i] && T.hTable[i] != Deleted_Item::get_Item())
+        {
+            os << "key = " << left << setw(20) << T.hTable[i]->key
+            << left << "value = " << T.hTable[i]->value << endl;
+        }
+    }
     return os;
 }
 
@@ -237,4 +240,43 @@ void HashTable::save_values(Item** table, int s)
     {
         table[i] = hTable[i];
     }
+}
+
+int HashTable::getIndex(string k) const
+{
+    int index = h(k, size);
+
+    while(index < size)
+    {
+        if(!hTable[index])
+        {
+            return NOT_FOUND;
+        }
+        else if(hTable[index]->key == k)
+        {
+            return index;
+        }
+        index++;
+        if(index == size)
+        {
+            index = 0;
+        }
+    }
+    return NOT_FOUND;
+}
+
+int  &HashTable::operator[](string key)
+{
+    int place = getIndex(key);
+    if(place != -1)
+    {
+        return hTable[place]->value;
+    }
+    else
+    {
+        insert(key);
+        int at_index = getIndex(key);
+        return hTable[at_index]->value;
+    }
+    //TODO: what if it is not in there?
 }

@@ -25,7 +25,6 @@ unsigned my_hash(string s, int tableSize)
     return hashVal;
 }
 
-
 //Test the code
 int menu()
 {
@@ -39,7 +38,8 @@ int menu()
     cout << "2. Search" << endl;
     cout << "3. Delete" << endl;
     cout << "4. Dump table" << endl;
-    cout << "5. Exit" << endl;
+    cout << "5. Add value" << endl;
+    cout << "6. Exit" << endl;
 
     cout << "Enter your choice: ";
 
@@ -109,6 +109,12 @@ int main()
             break;
 
         case 5:
+            cout << "Enter key of the value to change: ";
+            cin >> key;
+            table[key]++;
+            break;
+
+        case 6:
             go = false;
             break;
 

@@ -116,6 +116,8 @@ public:
     // IMPLEMENT
     bool remove(string key);
 
+    int &operator[](string key);
+
 
     /** \brief Display all items in the table T
       *
@@ -179,6 +181,9 @@ private:
 
     //save values for rehashing
     void save_values(Item** table, int s);
+
+    //if the item is found, return the index
+    int getIndex(string k) const;
 
 };
 
