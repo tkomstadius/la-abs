@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1429260660 source:c:\users\therése\documents\tnd004\lab2\item.cpp
+	"Item.h"
+
+1429260660 c:\users\therése\documents\tnd004\lab2\item.h
+	<iostream>
+	<string>
+	<iomanip>
+	<new>
+
+1429984508 source:c:\users\therése\documents\tnd004\lab2\test.cpp
+	<iostream>
+	<string>
+	"hashTable.h"
+
+1430039418 c:\users\therése\documents\tnd004\lab2\hashtable.h
+	"item.h"
+	<iostream>
+
+1429999362 source:c:\users\therése\documents\tnd004\lab2\hashtable.cpp
+	<assert.h>
+	<iomanip>
+	"hashTable.h"
+

@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1428940537 source:c:\users\therése\documents\tnd004\lab1\main.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<algorithm>
+	<cctype>
+	"set.cpp"
+
+1429260512 c:\users\therése\documents\tnd004\lab1\set.cpp
+	<iostream>
+	<new>
+	<cassert>
+
+1429260512 source:c:\users\therése\documents\tnd004\lab1\set.cpp
+	<iostream>
+	<new>
+	<cassert>
+

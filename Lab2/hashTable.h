@@ -174,6 +174,12 @@ private:
     //disable assignment operator
     const HashTable& operator=(const HashTable &);
 
+    //make nullptr
+    void empty_array(int end);
+
+    //save values for rehashing
+    void save_values(Item** table, int s);
+
 };
 
 #endif

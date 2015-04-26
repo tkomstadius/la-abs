@@ -39,7 +39,8 @@ int nextPrime( int n )
 HashTable::HashTable(int table_size, HASH f)
     : size(nextPrime(table_size)), h(f), nItems(0)
 {
-    hTable = nullptr; //to be deleted
+    hTable = new Item*[size];
+    empty_array(size);
 }
 
 
@@ -47,7 +48,11 @@ HashTable::HashTable(int table_size, HASH f)
 // IMPLEMENT
 HashTable::~HashTable()
 {
-
+    for(int i = 0; i < size; i++)
+    {
+        delete hTable[i];
+    }
+    delete[] hTable;
 }
 
 
@@ -63,7 +68,25 @@ double HashTable::loadFactor() const
 // IMPLEMENT
 int HashTable::find(string key) const
 {
-    return NOT_FOUND; //to be deleted
+    int index = h(key, size);
+
+    while(index < size)
+    {
+        if(!hTable[index])
+        {
+            return NOT_FOUND;
+        }
+        else if(hTable[index]->key == key)
+        {
+            return hTable[index]->value;
+        }
+        index++;
+        if(index == size)
+        {
+            index = 0;
+        }
+    }
+    return NOT_FOUND;
 }
 
 
@@ -73,7 +96,33 @@ int HashTable::find(string key) const
 // IMPLEMENT
 void HashTable::insert(string key, int v)
 {
+    int index = h(key, size);
+    bool inserted = false;
+    while(!inserted)
+    {
+        if(!hTable[index] || hTable[index] == Deleted_Item::get_Item())
+        {
+            hTable[index] = new Item(key, v);
+            nItems++;
+            inserted = true;
 
+            if(loadFactor() >= MAX_LOAD_FACTOR)
+            {
+                reHash();
+            }
+        }
+        else if(hTable[index]->key == key)
+        {
+            hTable[index]->value = v;
+            index = size;
+            inserted = true;
+        }
+        index++;
+        if(index == size)
+        {
+            index = 0;
+        }
+    }
 }
 
 
@@ -83,7 +132,30 @@ void HashTable::insert(string key, int v)
 // IMPLEMENT
 bool HashTable::remove(string key)
 {
-    return true; //to be deleted
+    bool one_turn = false;
+    int index = h(key, size);
+    while(index < size)
+    {
+        if(!hTable[index])
+        {
+            return false;
+        }
+        else if(hTable[index]->key == key)
+        {
+            delete hTable[index];
+            hTable[index] = Deleted_Item::get_Item();
+            nItems--;
+            return true;
+        }
+        index++;
+        if(index == size && !one_turn)
+        {
+            index = 0;
+            one_turn = true;
+        }
+
+    }
+    return false; //to be deleted
 }
 
 
@@ -128,5 +200,41 @@ ostream& operator<<(ostream& os, const HashTable& T)
 // IMPLEMENT
 void HashTable::reHash()
 {
+    cout << "Rehashing ..." << endl;
 
+    Item** temp_table = new Item*[size];
+    int old_size = size;
+    save_values(temp_table, old_size);
+
+    size = nextPrime(size*2);
+    nItems = 0;
+    hTable = new Item*[size];
+    empty_array(size);
+
+    for(int i = 0; i < old_size; i++)
+    {
+        if(temp_table[i] && temp_table[i] != Deleted_Item::get_Item())
+        {
+            insert(temp_table[i]->key, temp_table[i]->value);
+        }
+    }
+
+    cout << "New size = " << size << endl;
+
+}
+
+void HashTable::empty_array(int e)
+{
+    for(int i = 0; i < e; i++)
+    {
+        hTable[i] = nullptr;
+    }
+}
+
+void HashTable::save_values(Item** table, int s)
+{
+    for(int i = 0; i < s; i++)
+    {
+        table[i] = hTable[i];
+    }
 }
