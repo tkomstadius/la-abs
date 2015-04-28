@@ -268,15 +268,11 @@ int HashTable::getIndex(string k) const
 int  &HashTable::operator[](string key)
 {
     int place = getIndex(key);
-    if(place != -1)
-    {
-        return hTable[place]->value;
-    }
-    else
+    if(place == NOT_FOUND)
     {
         insert(key);
-        int at_index = getIndex(key);
-        return hTable[at_index]->value;
+        place = getIndex(key);
     }
+    return hTable[place]->value;
     //TODO: what if it is not in there?
 }

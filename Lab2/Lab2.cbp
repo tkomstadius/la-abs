@@ -35,7 +35,7 @@
 		<Unit filename="Item.h" />
 		<Unit filename="hashTable.cpp" />
 		<Unit filename="hashTable.h" />
-		<Unit filename="test.cpp" />
+		<Unit filename="word.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -1,5 +1,9 @@
 # ignore compile related files
+
+# no bin or obj directories
 bin/
 obj/
+
+# no depend or layoutfiles in any directory
 *.depend
 *.layout

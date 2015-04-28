@@ -1,0 +1,78 @@
+Number of words in the file = 53
+Number unique  words in the file = 41
+
+
+Frequency table sorted alphabetically...
+
+  	KEY		COUNTER
+==================================
+       academic           2
+            all           1
+             an           1
+            and           2
+         anders           1
+   announcement           1
+             as           2
+         attend           1
+             be           1
+          below           1
+           best           1
+         career           1
+    celebration           1
+     dieckmanns           1
+             dm           2
+         docent           1
+         doctor           1
+         double           1
+           find           1
+             if           1
+      important           1
+             in           1
+             is           1
+             it           2
+          level           1
+           many           1
+           mark           1
+           nice           1
+             of           2
+         please           1
+       possible           1
+          reach           1
+        regards           1
+        seminar           1
+          staff           2
+           step           1
+            the           4
+           this           1
+             to           2
+           vita           2
+          would           1
+Number of words after remove: 10
+
+
+Frequency table sorted alphabetically...
+
+  	KEY		COUNTER
+==================================
+       academic           2
+            and           2
+             as           2
+             dm           2
+             it           2
+             of           2
+          staff           2
+            the           4
+             to           2
+           vita           2
+Enter two words:
+
+Frequency table in [it,to]
+
+  	KEY		COUNTER
+==================================
+             to           2
+            the           4
+          staff           2
+             of           2
+             it           2
+
