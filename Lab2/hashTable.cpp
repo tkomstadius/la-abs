@@ -86,31 +86,34 @@ int HashTable::find(string key) const
 // IMPLEMENT
 void HashTable::insert(string key, int v)
 {
-    int index = h(key, size);
-    bool inserted = false;
-    while(!inserted)
+    int index = getIndex(key);
+    if(index != NOT_FOUND)
     {
-        if(!hTable[index] || hTable[index] == Deleted_Item::get_Item())
+        hTable[index]->value = v;
+    }
+    else
+    {
+        bool inserted = false;
+        int place = h(key,size);
+        while(!inserted)
         {
-            hTable[index] = new Item(key, v);
-            nItems++;
-            inserted = true;
-
-            if(loadFactor() >= MAX_LOAD_FACTOR)
+            if(!hTable[place] || hTable[place] == Deleted_Item::get_Item())
             {
-                reHash();
+                hTable[place] = new Item(key, v);
+                nItems++;
+                inserted = true;
+
+                if(loadFactor() >= MAX_LOAD_FACTOR)
+                {
+                    reHash();
+                }
             }
-        }
-        else if(hTable[index]->key == key)
-        {
-            hTable[index]->value = v;
-            index = size;
-            inserted = true;
-        }
-        index++;
-        if(index == size)
-        {
-            index = 0;
+            place++;
+            if(place == size)
+            {
+                place = 0;
+            }
+            //place = ++place % size;
         }
     }
 }
@@ -205,23 +208,41 @@ void HashTable::reHash()
 {
     cout << "Rehashing ..." << endl;
 
-    Item** temp_table = new Item*[size];
-    int old_size = size;
-    save_values(temp_table, old_size);
-
-    size = nextPrime(size*2);
-    nItems = 0;
-    hTable = new Item*[size];
-    empty_array(size);
-
-    for(int i = 0; i < old_size; i++)
+    int new_size = nextPrime(size*2);
+    Item** new_table = new Item*[new_size];
+    for(int i = 0; i < new_size; i++)
     {
-        if(temp_table[i] && temp_table[i] != Deleted_Item::get_Item())
+        new_table[i] = nullptr;
+    }
+
+    for(int i = 0; i < size; i++)
+    {
+        if(hTable[i] && hTable[i] != Deleted_Item::get_Item())
         {
-            insert(temp_table[i]->key, temp_table[i]->value);
+            int index = h(hTable[i]->key, new_size);
+
+            while(index < new_size)
+            {
+                if(!new_table[index])
+                {
+                    new_table[index] = hTable[i];
+                    index = new_size;
+                }
+                else
+                {
+                    ++index;
+                    if(index == new_size)
+                    {
+                        index = 0;
+                    }
+                }
+            }
         }
     }
 
+    delete[] hTable;
+    hTable = new_table;
+    size = new_size;
     cout << "New size = " << size << endl;
 
 }
