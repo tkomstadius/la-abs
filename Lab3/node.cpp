@@ -22,7 +22,14 @@ Node::Node(ELEMENT v, Node *l, Node *r)
 //recursively deletes the nodes in the left_subtree and right-subtree
 Node::~Node()
 {
-    //ADD CODE
+    if(!this->l_thread)
+    {
+        delete this->left;
+    }
+    if(!this->r_thread)
+    {
+        delete this->right;
+    }
 }
 
 
@@ -31,8 +38,42 @@ Node::~Node()
 //Otherwise, return false --v already exists in the tree
 bool Node::insert(ELEMENT v)
 {
-    //ADD CODE
-    return false;
+    //this = root of the subtree
+    if(v.first < this->value.first)
+    {
+        if(this->l_thread)
+        {
+            Node *temp_parent = this->left;
+            this->left = new Node(v, temp_parent, this);
+            this->left->l_thread = this->left->r_thread = true;
+            this->l_thread = false;
+            return true;
+
+        }
+        else
+        {
+            return this->left->insert(v);
+        }
+    }
+    else if(v.first > this->value.first)
+    {
+        if(this->r_thread)
+        {
+            Node *temp_parent = this->right;
+            this->right = new Node(v, this, temp_parent);
+            this->right->l_thread = this->right->r_thread = true;
+            this->r_thread = false;
+            return true;
+        }
+        else
+        {
+            return this->right->insert(v);
+        }
+    }
+    else
+    {
+        return false;
+    }
 }
 
 
@@ -44,8 +85,43 @@ bool Node::insert(ELEMENT v)
 //isRight==true: this node is right child of parent
 bool Node::remove(string key, Node* parent, bool isRight)
 {
-    //ADD CODE
-    return false;
+    if(key < this->value.first)
+    {
+        if(this->l_thread)
+        {
+            return false;
+        }
+        else
+        {
+            return this->left->remove(key, this, false);
+        }
+    }
+    else if(key > this->value.first)
+    {
+        if(this->r_thread)
+        {
+            return false;
+        }
+        else
+        {
+            return this->right->remove(key, this, true);
+        }
+    }
+    else
+    {
+        if(!this->l_thread && !this->r_thread)
+        {
+            this->value = this->right->findMin()->value;
+            return this->right->remove(value.first, this, true);
+        }
+        else
+        {
+            this->removeMe(parent, isRight);
+            return true;
+        }
+    }
+
+
 }
 
 
@@ -62,7 +138,55 @@ bool Node::remove(string key, Node* parent, bool isRight)
 //2c: a right child with no children
 void Node::removeMe(Node* parent, bool isRight)
 {
-   //ADD CODE
+   if(isRight) //this node is right child of parent
+   {
+       //right child with only a right child
+       if(!this->r_thread)
+       {
+           cout << "2a";
+           this->right->findMin()->left = parent;
+           parent->right = this->right;
+       }
+       //right child with only a left child
+       else if(!this->l_thread)
+       {
+           cout << "2b";
+           this->left->findMax()->right = this->right;
+           parent->right = this->right;
+       }
+       else
+       {
+           cout << "2c";
+           parent->right = this->right;
+           parent->r_thread = true;
+       }
+   }
+   else //this node is left child of parent
+   {
+       //left child with only a right child
+       if(!this->r_thread)
+       {
+           cout << "1a";
+           this->right->findMin()->left = this->left;
+           parent->left = this->right;
+       }
+       //left child with only left child
+       else if(!this->l_thread)
+       {
+           cout << "1b";
+           this->left->findMax()->right = parent;
+           parent->left = this->left;
+       }
+       //left child with no children
+       else
+       {
+           cout << "1c";
+           parent->left = this->left;
+           parent->l_thread = true;
+       }
+
+   }
+   delete this;
 }
 
 
@@ -72,8 +196,34 @@ void Node::removeMe(Node* parent, bool isRight)
 //If there is no node storing key then return nullptr
 Node* Node::find(string key)
 {
-    //ADD CODE
-    return nullptr;
+    if(key < this->value.first)
+    {
+        //left
+        if(this->l_thread)
+        {
+            return nullptr;
+        }
+        else
+        {
+            return this->left->find(key);
+        }
+    }
+    else if(key > this->value.first)
+    {
+        //right
+        if(!this->r_thread)
+        {
+            return this->right->find(key);
+        }
+        else
+        {
+            return nullptr;
+        }
+    }
+    else
+    {
+        return this;
+    }
 }
 
 
@@ -81,8 +231,10 @@ Node* Node::find(string key)
 //of the tree whose root is this node
 Node* Node::findMin()
 {
-    //ADD CODE
-    return nullptr;
+    Node *n = this;
+    while(!n->l_thread)
+        n = n->left;
+    return n;
 }
 
 
@@ -90,8 +242,10 @@ Node* Node::findMin()
 //of the tree whose root is this node
 Node* Node::findMax()
 {
-    //ADD CODE
-    return nullptr;
+    Node *n = this;
+    while(!n->r_thread)
+        n = n->right;
+    return n;
 }
 
 

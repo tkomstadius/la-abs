@@ -20,29 +20,29 @@ using namespace std;
 BST_threaded::BST_threaded()
  : counter(0)
 {
-    //ADD CODE
+    ELEMENT dummy("", -1);
+    root = new Node(dummy, root, root);
+    root->l_thread = root->r_thread = true;
 }
 
 
 //destructor
 BST_threaded::~BST_threaded()
 {
-  //ADD CODE
+    delete root;
 }
 
 
 //Test if the tree is empty
 bool BST_threaded::empty() const
 {
-    //ADD CODE
-    return true;
+    return root->l_thread;
 }
 
 //Return mumber of keys (elements) stored in the tree
 int BST_threaded::size() const
 {
-   //ADD CODE
-    return 0;
+    return counter;
 }
 
 
@@ -66,7 +66,10 @@ void BST_threaded::insert(ELEMENT v)
 //Remove node with key from the tree
 void BST_threaded::remove(string key)
 {
-   //ADD CODE
+    if(!this->empty())
+    {
+        root->left->remove(key, root, false);
+    }
 }
 
 
@@ -77,10 +80,17 @@ void BST_threaded::remove(string key)
 //then an ELEMENT (key,0) is inserted and a reference to it is returned
 ELEMENT& BST_threaded::operator[](string key)
 {
-    //ADD CODE
-    static ELEMENT e("", 0); //MUST remove this code
-
-    return e; //MUST remove this code
+    Node *found_node = root->left->find(key);
+    if(found_node)
+    {
+        return found_node->value;
+    }
+    else
+    {
+        ELEMENT e(key, 0);
+        this->insert(e);
+        return root->left->find(key)->value;
+    }
 }
 
 
@@ -89,16 +99,32 @@ ELEMENT& BST_threaded::operator[](string key)
 //Otherwise, return this->end().
 BiIterator BST_threaded::find(string key) const
 {
-    //ADD CODE
-    return end();
+    if(!empty())
+    {
+        Node *found_node = root->left->find(key);
+        if(found_node)
+        {
+            BiIterator it(found_node);
+            return it;
+        }
+    }
+    return this->end();
 }
 
 
 //Return an iterator referring to the first node in the inorder traversal of the BST
 BiIterator BST_threaded::begin() const
 {
-    //ADD CODE
-    return end();
+    if(empty())
+    {
+        return end();
+    }
+    else
+    {
+        BiIterator it(this->root->left->findMin());
+        return it;
+    }
+
 }
 
 

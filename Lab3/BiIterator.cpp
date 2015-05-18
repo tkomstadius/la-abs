@@ -25,22 +25,24 @@ BiIterator::BiIterator(Node *ptr)
 //Dereferencing operator
 ELEMENT& BiIterator::operator*() const
 {
-    //ADD CODE
+    return this->current->value;
 }
 
 
 //Member access operator
 ELEMENT* BiIterator::operator->() const
 {
-    //ADD CODE
-    return nullptr;
+    return &this->current->value;
 }
 
 
 //Equality comparison operator
 bool BiIterator::operator==(const BiIterator &it) const
 {
-    //ADD CODE
+    if(this->current == it.current)
+    {
+        return true;
+    }
     return false;
 }
 
@@ -48,7 +50,10 @@ bool BiIterator::operator==(const BiIterator &it) const
 //Inequality comparison operator
 bool BiIterator::operator!=(const BiIterator &it) const
 {
-   //ADD CODE
+    if(this->current != it.current)
+    {
+        return true;
+    }
     return false;
 }
 
@@ -56,7 +61,16 @@ bool BiIterator::operator!=(const BiIterator &it) const
 //Pre increment operator
 BiIterator& BiIterator::operator++()
 {
-   //ADD CODE
+    if(!this->current->r_thread) //then node has right subtree
+    {
+        //then current is leftmost of that right subtree
+        this->current = this->current->right->findMin();
+    }
+    else
+    {
+        //follow the thread to the parent
+        this->current = this->current->right;
+    }
     return *this;
 }
 
@@ -65,22 +79,51 @@ BiIterator& BiIterator::operator++()
 //Pos increment operator: see page 277 and 278 of C++ direkt
 BiIterator BiIterator::operator++(int)
 {
-   //ADD CODE
-    return *this;
+    BiIterator before(this->current);
+    if(!this->current->r_thread) //if node has right subtree
+    {
+        //then next should be the leftmost of that right subtree
+        this->current = this->current->right->findMin();
+    }
+    else
+    {
+        //else follow the thread to the parent
+        this->current = this->current->right;
+    }
+    return before;
 }
 
 //Pre decrement operator
 BiIterator& BiIterator::operator--()
 {
-   //ADD CODE
+    if(!this->current->l_thread) //if node has left subtree
+    {
+        //next node is the rightmost node of that subtree
+        this->current = this->current->left->findMax();
+    }
+    else
+    {
+        //follow the left thread
+        this->current = this->current->left;
+    }
     return *this;
 }
 
 //Pos decrement operator
 BiIterator BiIterator::operator--(int)
 {
-   //ADD CODE
-    return *this;
+    BiIterator before(this->current);
+    if(!this->current->l_thread) //if node has left subtree
+    {
+        //next node is the rightmost node of that subtree
+        this->current = this->current->left->findMax();
+    }
+    else
+    {
+        //follow the left thread
+        this->current = this->current->left;
+    }
+    return before;
 }
 
 #endif /* DOXYGEN_SHOULD_SKIP_THIS */
