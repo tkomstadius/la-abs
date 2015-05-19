@@ -67,7 +67,6 @@ bool Node::insert(ELEMENT v)
         }
         else
         {
-            this->value.second++;
             return this->right->insert(v);
         }
     }

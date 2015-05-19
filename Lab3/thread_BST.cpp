@@ -67,6 +67,7 @@ void BST_threaded::insert(ELEMENT v)
 void BST_threaded::remove(string key)
 {
     root->left->remove(key, root, false);
+    this->counter--;
 }
 
 
