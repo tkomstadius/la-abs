@@ -56,11 +56,7 @@ BiIterator& BiIterator::operator++()
     if(!this->current->r_thread) //then node has right subtree
     {
         //then current is leftmost of that right subtree
-        this->current = this->current->right;
-        while(!this->current->l_thread)
-        {
-            this->current = this->current->left;
-        }
+        this->current = this->current->right->findMin();
     }
     else
     {
@@ -86,11 +82,7 @@ BiIterator& BiIterator::operator--()
     if(!this->current->l_thread) //if node has left subtree
     {
         //next node is the rightmost node of that subtree
-        this->current = this->current->left;
-        while(!this->current->r_thread)
-        {
-            this->current = this->current->right;
-        }
+        this->current = this->current->left->findMax();
     }
     else
     {

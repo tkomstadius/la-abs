@@ -84,7 +84,7 @@ int main()
 
     textFile >> word;
     change_word(word);
-    ELEMENT e(word, 0);
+    ELEMENT e(word, 1);
     table.insert(e);
     while(textFile >> word)
     {
@@ -157,7 +157,7 @@ int main()
     for(int i = 0; i < to_remove.size(); i++)
     {
         cout << to_remove.at(i) << endl;
-        table.remove(to_remove[i]);
+        table.remove(to_remove.at(i));
     }
 
     cout << endl << endl << "Number of words after remove: " << table.size();
@@ -200,7 +200,7 @@ int main()
     cout << endl << endl << endl
          << "Frequency table in [" << w1 << "," << w2 << "]" << endl << endl;
 
-    BiIterator interval = table.find(w2);
+    BiIterator interval = table.find(w1);
 
     cout << "  \tKEY" << "\tCOUNTER" << endl;
     cout << "==============================\n";

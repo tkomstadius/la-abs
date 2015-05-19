@@ -140,16 +140,6 @@ int main()
     table.remove("8");
     table.remove("100");
 
-    it = table.begin();
-
-    cout << "  \tKEY" << "\tCOUNTER" << endl;
-    cout << "==============================\n";
-    for( ; it != table.end(); it++)
-    {
-         cout << setw(10) << it->first
-              << setw(12) << it->second << endl;
-    }
-
     if (table.empty())
         cout << "Table is empty!" << endl << endl;
 

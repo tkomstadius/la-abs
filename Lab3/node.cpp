@@ -143,20 +143,22 @@ void Node::removeMe(Node* parent, bool isRight)
        //right child with only a right child
        if(!this->r_thread)
        {
-           cout << "2a";
-           this->right->findMin()->left = parent;
+           //cout << "2a";
            parent->right = this->right;
+           this->right->findMin()->left = parent;
+           this->right = nullptr;
        }
        //right child with only a left child
        else if(!this->l_thread)
        {
-           cout << "2b";
-           this->left->findMax()->right = this->right;
+           //cout << "2b";
            parent->right = this->left;
+           this->left->findMax()->right = this->right;
+           this->left = nullptr;
        }
        else
        {
-           cout << "2c";
+           //cout << "2c";
            parent->r_thread = true;
            parent->right = this->right;
        }
@@ -166,21 +168,23 @@ void Node::removeMe(Node* parent, bool isRight)
        //left child with only a right child
        if(!this->r_thread)
        {
-           cout << "1a";
-           this->right->findMin()->left = this->left;
+           //cout << "1a";
            parent->left = this->right;
+           this->right->findMin()->left = this->left;
+           this->right = nullptr;
        }
        //left child with only left child
        else if(!this->l_thread)
        {
-           cout << "1b";
-           this->left->findMax()->right = parent;
+           //cout << "1b";
            parent->left = this->left;
+           this->left->findMax()->right = parent;
+           this->left = nullptr;
        }
        //left child with no children
        else
        {
-           cout << "1c";
+           //cout << "1c";
            parent->l_thread = true;
            parent->left = this->left;
        }
