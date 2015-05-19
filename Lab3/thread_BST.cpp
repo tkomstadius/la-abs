@@ -66,10 +66,7 @@ void BST_threaded::insert(ELEMENT v)
 //Remove node with key from the tree
 void BST_threaded::remove(string key)
 {
-    if(!this->empty())
-    {
-        root->left->remove(key, root, false);
-    }
+    root->left->remove(key, root, false);
 }
 
 
@@ -99,32 +96,23 @@ ELEMENT& BST_threaded::operator[](string key)
 //Otherwise, return this->end().
 BiIterator BST_threaded::find(string key) const
 {
-    if(!empty())
+    Node *found_node = root->left->find(key);
+    if(found_node)
     {
-        Node *found_node = root->left->find(key);
-        if(found_node)
-        {
-            BiIterator it(found_node);
-            return it;
-        }
+        return BiIterator(found_node);
     }
-    return this->end();
+    else
+    {
+        return this->end();
+    }
+
 }
 
 
 //Return an iterator referring to the first node in the inorder traversal of the BST
 BiIterator BST_threaded::begin() const
 {
-    if(empty())
-    {
-        return end();
-    }
-    else
-    {
-        BiIterator it(this->root->left->findMin());
-        return it;
-    }
-
+    return BiIterator(this->root->findMin());
 }
 
 

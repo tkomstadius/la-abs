@@ -67,6 +67,7 @@ bool Node::insert(ELEMENT v)
         }
         else
         {
+            this->value.second++;
             return this->right->insert(v);
         }
     }
@@ -152,13 +153,13 @@ void Node::removeMe(Node* parent, bool isRight)
        {
            cout << "2b";
            this->left->findMax()->right = this->right;
-           parent->right = this->right;
+           parent->right = this->left;
        }
        else
        {
            cout << "2c";
-           parent->right = this->right;
            parent->r_thread = true;
+           parent->right = this->right;
        }
    }
    else //this node is left child of parent
@@ -181,8 +182,8 @@ void Node::removeMe(Node* parent, bool isRight)
        else
        {
            cout << "1c";
-           parent->left = this->left;
            parent->l_thread = true;
+           parent->left = this->left;
        }
 
    }
@@ -231,7 +232,7 @@ Node* Node::find(string key)
 //of the tree whose root is this node
 Node* Node::findMin()
 {
-    Node *n = this;
+    Node* n = this;
     while(!n->l_thread)
         n = n->left;
     return n;
@@ -242,7 +243,7 @@ Node* Node::findMin()
 //of the tree whose root is this node
 Node* Node::findMax()
 {
-    Node *n = this;
+    Node* n = this;
     while(!n->r_thread)
         n = n->right;
     return n;

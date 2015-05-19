@@ -39,22 +39,14 @@ ELEMENT* BiIterator::operator->() const
 //Equality comparison operator
 bool BiIterator::operator==(const BiIterator &it) const
 {
-    if(this->current == it.current)
-    {
-        return true;
-    }
-    return false;
+    return this->current == it.current;
 }
 
 
 //Inequality comparison operator
 bool BiIterator::operator!=(const BiIterator &it) const
 {
-    if(this->current != it.current)
-    {
-        return true;
-    }
-    return false;
+    return this->current != it.current;
 }
 
 
@@ -64,7 +56,11 @@ BiIterator& BiIterator::operator++()
     if(!this->current->r_thread) //then node has right subtree
     {
         //then current is leftmost of that right subtree
-        this->current = this->current->right->findMin();
+        this->current = this->current->right;
+        while(!this->current->l_thread)
+        {
+            this->current = this->current->left;
+        }
     }
     else
     {
@@ -79,17 +75,8 @@ BiIterator& BiIterator::operator++()
 //Pos increment operator: see page 277 and 278 of C++ direkt
 BiIterator BiIterator::operator++(int)
 {
-    BiIterator before(this->current);
-    if(!this->current->r_thread) //if node has right subtree
-    {
-        //then next should be the leftmost of that right subtree
-        this->current = this->current->right->findMin();
-    }
-    else
-    {
-        //else follow the thread to the parent
-        this->current = this->current->right;
-    }
+    BiIterator before = *this;
+    ++(*this);
     return before;
 }
 
@@ -99,7 +86,11 @@ BiIterator& BiIterator::operator--()
     if(!this->current->l_thread) //if node has left subtree
     {
         //next node is the rightmost node of that subtree
-        this->current = this->current->left->findMax();
+        this->current = this->current->left;
+        while(!this->current->r_thread)
+        {
+            this->current = this->current->right;
+        }
     }
     else
     {
@@ -112,17 +103,8 @@ BiIterator& BiIterator::operator--()
 //Pos decrement operator
 BiIterator BiIterator::operator--(int)
 {
-    BiIterator before(this->current);
-    if(!this->current->l_thread) //if node has left subtree
-    {
-        //next node is the rightmost node of that subtree
-        this->current = this->current->left->findMax();
-    }
-    else
-    {
-        //follow the left thread
-        this->current = this->current->left;
-    }
+    BiIterator before = *this;
+    --(*this);
     return before;
 }
 
