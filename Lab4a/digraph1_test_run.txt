@@ -1,0 +1,133 @@
+== Menu =======
+1. readGraph
+2. uwsssp
+3. pwsssp
+4. printGraph
+5. printTree
+6. printPath
+9. quit
+===============
+Your choice ? 1
+File name   ? digraph1.txt
+
+
+== Menu =======
+1. readGraph
+2. uwsssp
+3. pwsssp
+4. printGraph
+5. printTree
+6. printPath
+9. quit
+===============
+Your choice ? 4
+
+------------------------------------------------------------------
+vertex  adjacency list
+------------------------------------------------------------------
+   1 :  ( 3,  4)  ( 4,  5)  ( 7,  6)  ( 8,  8)
+   2 :
+   3 :  ( 2,  5)  ( 7,  1)
+   4 :  ( 3,  2)
+   5 :  ( 1,  7)  ( 4,  8)
+   6 :  ( 1,  3)  ( 5,  9)
+   7 :  ( 2,  3)  ( 8,  1)
+   8 :  ( 6,  4)
+------------------------------------------------------------------
+
+== Menu =======
+1. readGraph
+2. uwsssp
+3. pwsssp
+4. printGraph
+5. printTree
+6. printPath
+9. quit
+===============
+Your choice ? 2
+Source s    ? 5
+
+== Menu =======
+1. readGraph
+2. uwsssp
+3. pwsssp
+4. printGraph
+5. printTree
+6. printPath
+9. quit
+===============
+Your choice ? 5
+
+----------------------
+vertex    dist    path
+----------------------
+   1 :       1       5
+   2 :       3       3
+   3 :       2       1
+   4 :       1       5
+   5 :       0       0
+   6 :       3       8
+   7 :       2       1
+   8 :       2       1
+----------------------
+
+== Menu =======
+1. readGraph
+2. uwsssp
+3. pwsssp
+4. printGraph
+5. printTree
+6. printPath
+9. quit
+===============
+Your choice ? 6
+
+Shortest path =   5   1   8   6   (3)
+
+== Menu =======
+1. readGraph
+2. uwsssp
+3. pwsssp
+4. printGraph
+5. printTree
+6. printPath
+9. quit
+===============
+Your choice ? 3
+Source s    ? 5
+
+== Menu =======
+1. readGraph
+2. uwsssp
+3. pwsssp
+4. printGraph
+5. printTree
+6. printPath
+9. quit
+===============
+Your choice ? 5
+
+----------------------
+vertex    dist    path
+----------------------
+   1 :       7       5
+   2 :      14       7
+   3 :      10       4
+   4 :       8       5
+   5 :       0       0
+   6 :      16       8
+   7 :      11       3
+   8 :      12       7
+----------------------
+
+== Menu =======
+1. readGraph
+2. uwsssp
+3. pwsssp
+4. printGraph
+5. printTree
+6. printPath
+9. quit
+===============
+Your choice ? 9
+Bye bye ...
