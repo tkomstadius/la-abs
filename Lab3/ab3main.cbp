@@ -31,6 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="BiIterator.cpp" />
+		<Unit filename="BiIterator.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="node.cpp" />
+		<Unit filename="node.h" />
+		<Unit filename="thread_BST.cpp" />
+		<Unit filename="threaded_BST.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
