@@ -93,11 +93,11 @@ void Digraph::uwsssp(int s)
                 path[temp->vertex] = v;
                 dist[temp->vertex] = dist[v] + 1;
                 Q.enqueue(temp->vertex);
-                temp = temp->next;
+                temp = array[v].getNext();
             }
             else
             {
-                temp = temp->next;
+                temp = array[v].getNext();
             }
         }
         done[v] = true;
@@ -143,11 +143,11 @@ void Digraph::pwsssp(int s)
             if(!done[temp->vertex])
             {
                 Q.enqueue(temp->vertex);
-                temp = temp->next;
+                temp = array[v].getNext();
             }
             else
             {
-                temp = temp->next;
+                temp = array[v].getNext();
             }
         }
 
