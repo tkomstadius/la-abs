@@ -32,6 +32,7 @@ public:
     // positive weighted single source shortest pats
     void pwsssp(int s);
 
+    int find_smallest_undone();
     // print graph
     void printGraph() const;
 

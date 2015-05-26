@@ -31,6 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="digraph.cpp" />
+		<Unit filename="digraph.h" />
+		<Unit filename="list.cpp" />
+		<Unit filename="list.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="queue.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

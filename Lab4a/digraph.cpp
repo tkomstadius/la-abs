@@ -114,7 +114,6 @@ void Digraph::pwsssp(int s)
          return;
     }
     // *** TODO ***
-    Queue<int> Q;
     for(int i = 0; i < size+1; i++)
     {
         dist[i] = INFINITY;
@@ -123,27 +122,19 @@ void Digraph::pwsssp(int s)
     }
 
     dist[s] = 0;
-    Q.enqueue(s);
+    done[s] = true;
+    int v = s;
 
-    while(!Q.isEmpty())
+    while(true)
     {
-        int v = Q.getFront();
-        Q.dequeue();
-        //marked as known
-        done[v] = true;
         Node *temp = array[v].getFirst();
         while(temp)
         {
-            if((dist[v] + temp->weight) < dist[temp->vertex])
+            if(!done[temp->vertex] && (dist[v] + temp->weight) < dist[temp->vertex])
             {
                     dist[temp->vertex] = dist[v] + temp->weight;
                     path[temp->vertex] = v;
-            }
-
-            if(!done[temp->vertex])
-            {
-                Q.enqueue(temp->vertex);
-                temp = array[v].getNext();
+                    temp = array[v].getNext();
             }
             else
             {
@@ -151,9 +142,29 @@ void Digraph::pwsssp(int s)
             }
         }
 
+        v = find_smallest_undone();
+        if(v == INFINITY)
+        {
+            break;
+        }
+        done[v] = true;
     }
 }
 
+int Digraph::find_smallest_undone()
+{
+    int smallest = INFINITY;
+    int vertex = INFINITY;
+    for(int i = 0; i < size+1; i++)
+    {
+        if(!done[i] && dist[i] < smallest)
+        {
+            smallest = dist[i];
+            vertex = i;
+        }
+    }
+    return vertex;
+}
 // print graph
 void Digraph::printGraph() const
 {
