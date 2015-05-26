@@ -68,7 +68,7 @@ void Digraph::uwsssp(int s)
     // *** TODO ***
     //use a queue to put unvisited vertices in
     Queue<int> Q;
-    for(int i = 0; i < size+1; i++)
+    for(int i = 1; i < size+1; i++)
     {
         dist[i] = INFINITY;
         path[i] = 0;
@@ -114,7 +114,7 @@ void Digraph::pwsssp(int s)
          return;
     }
     // *** TODO ***
-    for(int i = 0; i < size+1; i++)
+    for(int i = 1; i < size+1; i++)
     {
         dist[i] = INFINITY;
         path[i] = 0;
