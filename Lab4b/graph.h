@@ -39,6 +39,7 @@ private:
     // -- DATA MEMBERS
     List *array;
     int  size;
+
 };
 
 #endif
